@@ -1,0 +1,76 @@
+@import url("style.css");
+
+body{
+    margin: 0;
+    position: relative;
+    font-size: 62.5%;
+}
+
+main {
+    display: grid;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+@media(min-width:900px) {
+    main {
+        grid-template-columns: 75% 25%;
+    }
+}
+
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+.aboutBox {
+    background-color: lightgrey;
+    padding-left: 20px;
+}
+
+.archive, .elsewhere {
+    padding-left: 20px;
+}
+
+.content .writtenBy {
+    color: grey;
+}
+
+.content p {
+    line-height: 15px;
+}
+
+.content .greyBorder {
+    border: 1px solid grey;
+}
+
+.oldPost {
+    background-color: white;
+    color: lightblue;
+
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+
+.newPost{
+    background-color: white;
+    color: grey;
+
+    border: 2px solid grey;
+    border-radius: 15px;
+}
+
+.buttons {
+    padding-bottom: 80px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: lightgrey;
+    text-align: center;
+  }
