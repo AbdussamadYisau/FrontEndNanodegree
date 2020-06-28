@@ -1,88 +1,68 @@
 @import url("style.css");
 @import url("greyBorder.css");
 @import url("writtenBy.css");
-
-body{
-    margin: 0;
-    position: relative;
-    font-size: 62.5%;
+ body {
+	margin: 0;
+	position: relative;
+	font-size: 62.5%;
 }
-
 .container .title {
-    color: black;
+	color: black;
 }
-
-
 main {
-    display: grid;
-    margin-left: 10px;
-    margin-right: 10px;
-
+	display: grid;
+	margin-left: 10px;
+	margin-right: 10px;
 }
-
 @media(min-width:900px) {
-    main {
-        grid-template-columns: 75% 25%;
-    }
+	main {
+		grid-template-columns: 75% 25%;
+	}
 }
-
-
-
 .sidebar {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .aboutBox {
-    background-color: lightgrey;
-    padding-left: 20px;
+	background-color: lightgrey;
+	padding-left: 20px;
 }
-
-.aboutBox .avatar{
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.aboutBox .avatar {
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
-
-.archive, .elsewhere {
-    padding-left: 20px;
+.archive,
+.elsewhere {
+	padding-left: 20px;
 }
-
-
 .content p {
-    line-height: 15px;
+	line-height: 15px;
 }
-
 .subHeadingTwo h2+p {
-    text-decoration: underline;
+	text-decoration: underline;
 }
-
-
 .oldPost {
-    background-color: white;
-    color: lightblue;
-
-    border: 2px solid lightblue;
-    border-radius: 15px;
-    margin-right: 5px;
+	background-color: white;
+	color: lightblue;
+	border: 2px solid lightblue;
+	border-radius: 15px;
+	margin-right: 5px;
 }
-
-.newPost{
-    background-color: white;
-    color: grey;
-
-    border: 2px solid grey;
-    border-radius: 15px;
+.newPost {
+	background-color: white;
+	color: grey;
+	border: 2px solid grey;
+	border-radius: 15px;
 }
-
 .buttons {
-    padding-bottom: 80px;
+	padding-bottom: 80px;
 }
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: lightgrey;
-    text-align: center;
-  }
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: lightgrey;
+	text-align: center;
+}
