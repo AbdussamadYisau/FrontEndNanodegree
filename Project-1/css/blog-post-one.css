@@ -9,6 +9,10 @@
 .container .title {
 	color: black;
 }
+
+p, li, blockquote{
+    font-size: 20px;
+}
 main {
 	display: grid;
 	margin-left: 10px;
@@ -38,7 +42,7 @@ main {
 	padding-left: 20px;
 }
 .content p {
-	line-height: 15px;
+	line-height: 20px;
 }
 .subHeadingTwo h2+p {
 	text-decoration: underline;
