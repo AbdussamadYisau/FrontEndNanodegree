@@ -5,6 +5,35 @@ body{
     position: relative;
 }
 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #ddd;
+}
+nav li a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -16,12 +45,14 @@ body{
     margin: auto;
 }
 
-.container .flexItems a{
+.container .subscribe a{
     color: grey;
 }
 
-.container .title{
+.container .title a{
     text-decoration: underline;
+    color: black;
+    
 }
 
 .container .material-icons {
@@ -53,7 +84,7 @@ main {
 .card {
     /* Add shadows to create the "card" effect */
     width: 300px;
-    height: 400px;
+    height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
