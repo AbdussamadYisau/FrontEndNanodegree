@@ -18,6 +18,10 @@
  * 
 */
 
+navBar = document.querySelector('nav');
+unordedList = navBar.querySelector('ul');
+
+sections = document.querySelectorAll('section');
 
 /**
  * End Global Variables
@@ -35,6 +39,21 @@
 
 // build the nav
 
+for (let index = 0; index < sections.length; index++) {
+    let link = document.createElement('li');
+    
+    anchorTag = document.createElement('a');
+
+    anchorTag.setAttribute("href", "#");
+
+    anchorTag.innerHTML = `${sections[index].querySelector("h2").innerHTML}`;
+    
+    link.appendChild(anchorTag);
+    unordedList.appendChild(link);
+
+
+    // navBar.appendChild(link);
+}
 
 // Add class 'active' to section when near top of viewport
 
