@@ -104,8 +104,9 @@ section {
     color: #fff;
 }
 
-.page__footer p{
+.page__footer p a{
     color: #fff;
+    text-decoration: none;
 }
 
 
