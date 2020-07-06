@@ -78,6 +78,8 @@ section {
 
 .navbar__menu ul li a {
     text-decoration: none;
+    color: #000;
+    font-size: large;
 }
 
 .navbar__menu .menu__link {
