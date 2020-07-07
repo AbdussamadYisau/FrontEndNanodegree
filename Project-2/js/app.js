@@ -40,7 +40,7 @@ const sections = document.querySelectorAll('section');
 
 // build the nav
 
-function buildNav() {
+buildNav = () => {
 
     for (let iterator of sections) {
         let link = document.createElement("li");
@@ -55,10 +55,10 @@ function buildNav() {
 }
 // Add class 'active' to section when near top of viewport
 
-function activeLink() {
+activeLink = () => {
     let index = sections.length;
 
-    while(--index && window.scrollY + 40 < sections[index].offsetTop) {
+    while(--index && window.scrollY + 20 < sections[index].offsetTop) {
 
     }
     // Set all sectitons inactive
@@ -87,7 +87,7 @@ function activeLink() {
 
 // Scroll to anchor ID using scrollTO event
 
-function scrollToAnchor() {
+scrollToAnchor = () => {
     navBar.addEventListener("click", function(event){
         event.preventDefault();
         const clicked = document.querySelector("#" + event.target.dataset.nav);
