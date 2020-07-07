@@ -13,13 +13,15 @@
  * 
 */
 
+
 /**
  * Define Global Variables
  * 
 */
 
-navBar = document.querySelector('#navbar__list');
-sections = document.querySelectorAll('section');
+const navBar = document.querySelector('#navbar__list');
+const sections = document.querySelectorAll('section');
+
 
 
 /**
@@ -53,6 +55,35 @@ function buildNav() {
 }
 // Add class 'active' to section when near top of viewport
 
+function activeLink() {
+    let index = sections.length;
+
+    while(--index && window.scrollY + 40 < sections[index].offsetTop) {
+
+    }
+    // Set all sectitons inactive
+    for(let iterator of sections) {
+        if (iterator.classList.contains("your-active-class") === true) {
+            iterator.classList.remove("your-active-class");
+        }
+    }
+
+    //Get list elements from the dom
+    const active = document.querySelectorAll('li');
+
+    // Set all header lists as inactive
+    for (let iterator of active) {
+        if(iterator.classList.contains("active__link") === true) {
+            iterator.classList.remove("active__link");
+        }
+    }
+
+    // Set current section active
+    sections[index].classList.add("your-active-class");
+
+    //Set current list element as active
+    active[index].classList.add("active__link");
+}
 
 // Scroll to anchor ID using scrollTO event
 
@@ -76,5 +107,6 @@ buildNav();
 // Scroll to section on link click
 scrollToAnchor();
 // Set sections as active
-
+activeLink();
+window.addEventListener("scroll", activeLink);
 
