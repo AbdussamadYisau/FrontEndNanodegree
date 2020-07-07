@@ -73,8 +73,8 @@ activeLink = () => {
 
     // Set all header lists as inactive
     for (let iterator of active) {
-        if(iterator.classList.contains("active__link") === true) {
-            iterator.classList.remove("active__link");
+        if(iterator.classList.contains("active") === true) {
+            iterator.classList.remove("active");
         }
     }
 
@@ -82,7 +82,7 @@ activeLink = () => {
     sections[index].classList.add("your-active-class");
 
     //Set current list element as active
-    active[index].classList.add("active__link");
+    active[index].classList.add("active");
 }
 
 // Scroll to anchor ID using scrollTO event

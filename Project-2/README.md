@@ -23,3 +23,7 @@ This is where all the functionality of the web page occurs. There are three main
 1. Building the navigation menu dynamically.
 2. Making sure that the user is able to distinguish the section in view.
 3. Making sure that the user can scroll to each section by clicking the section link on the navbar.
+
+## Styles
+
+This is where the markup in the Index is made to look pleasing to the eyes. Most of the code here are the starter code provided by Udacity. This gives the project the UI and UX that it offers.
