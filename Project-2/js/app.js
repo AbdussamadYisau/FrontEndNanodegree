@@ -19,8 +19,10 @@
  * 
 */
 
+
 const navBar = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
+// const index = sections.length;
 
 
 /**
@@ -29,6 +31,10 @@ const sections = document.querySelectorAll('section');
  * 
 */
 
+isCloseToSectionStart = () => { 
+    let index = sections.length;
+    return (--index && window.scrollY + 20 < sections[index].offsetTop);
+}
 
 
 /**
@@ -55,33 +61,36 @@ buildNav = () => {
 // Add class 'active' to section when near top of viewport
 
 activeLink = () => {
-    let index = sections.length;
+    
+    while(isCloseToSectionStart()) {
+            // Set all sections inactive
+        let index = sections.length;
 
-    while(--index && window.scrollY + 20 < sections[index].offsetTop) {
-
-    }
-    // Set all sections inactive
-    for(let iterator of sections) {
-        if (iterator.classList.contains("your-active-class") === true) {
-            iterator.classList.remove("your-active-class");
+        for(let iterator of sections) {
+            if (iterator.classList.contains("your-active-class") === true) {
+                iterator.classList.remove("your-active-class");
+            }
         }
-    }
 
-    //Get list elements from the dom
-    const active = document.querySelectorAll('li');
+        //Get list elements from the dom
+        const active = document.querySelectorAll('li');
 
-    // Set all header lists as inactive
-    for (let iterator of active) {
-        if(iterator.classList.contains("active") === true) {
-            iterator.classList.remove("active");
+        // Set all header lists as inactive
+        for (let iterator of active) {
+            if(iterator.classList.contains("active") === true) {
+                iterator.classList.remove("active");
+            }
         }
-    }
 
-    // Set current section active
-    sections[index].classList.add("your-active-class");
+        // Set current section active
+        console.log(sections);
+        console.log(index);
+        sections[index].classList.add("your-active-class");
 
-    //Set current list element as active
-    active[index].classList.add("active");
+        //Set current list element as active
+        active[index].classList.add("active");
+        }
+    
 }
 
 // Scroll to anchor ID using scrollTO event
@@ -89,7 +98,7 @@ activeLink = () => {
 scrollToAnchor = (event) => {
     event.preventDefault();
     const clicked = document.querySelector("#" + event.target.dataset.nav);
-  clicked.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+clicked.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 };
 
 
@@ -105,4 +114,6 @@ buildNav();
 navBar.addEventListener("click",scrollToAnchor);
 // Set sections as active
 window.addEventListener("scroll", activeLink);
+
+
 
