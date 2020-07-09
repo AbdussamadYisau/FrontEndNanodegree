@@ -60,7 +60,7 @@ activeLink = () => {
     while(--index && window.scrollY + 20 < sections[index].offsetTop) {
 
     }
-    // Set all sectitons inactive
+    // Set all sections inactive
     for(let iterator of sections) {
         if (iterator.classList.contains("your-active-class") === true) {
             iterator.classList.remove("your-active-class");
@@ -86,12 +86,10 @@ activeLink = () => {
 
 // Scroll to anchor ID using scrollTO event
 
-scrollToAnchor = () => {
-    navBar.addEventListener("click", function(event){
-        event.preventDefault();
-        const clicked = document.querySelector("#" + event.target.dataset.nav);
-        clicked.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-    });
+scrollToAnchor = (event) => {
+    event.preventDefault();
+    const clicked = document.querySelector("#" + event.target.dataset.nav);
+  clicked.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 };
 
 
@@ -104,8 +102,7 @@ scrollToAnchor = () => {
 // Build menu 
 buildNav();
 // Scroll to section on link click
-scrollToAnchor();
+navBar.addEventListener("click",scrollToAnchor);
 // Set sections as active
-activeLink();
 window.addEventListener("scroll", activeLink);
 
