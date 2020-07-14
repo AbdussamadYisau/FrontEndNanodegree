@@ -3,7 +3,7 @@ const form = document.querySelector('.appForm');
 
 // Base URL and API Key for OpenWeatherMap API
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&appid=4c3d4cbc0699bd6b992b7ade198d09e2';
+const apiKey = '&appid=4c3d4cbc0699bd6b992b7ade198d09e2&units=imperial';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -79,7 +79,7 @@ const postData = async (url = '', data = {}) => {
 
       // update new entry values
       document.querySelector('#date').innerHTML = allData.date;
-      document.querySelector('#temp').innerHTML = allData.temp;
+      document.querySelector('#temp').innerHTML = `${allData.temp} degrees`;
       document.querySelector('#content').innerHTML = allData.content;
     }
     catch (error) {
