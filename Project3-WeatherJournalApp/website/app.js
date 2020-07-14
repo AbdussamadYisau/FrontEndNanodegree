@@ -2,8 +2,8 @@
 const form = document.querySelector('.appForm');
 
 // Base URL and API Key for OpenWeatherMap API
-const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&appid=4c3d4cbc0699bd6b992b7ade198d09e2&units=imperial';
+const baseURL = 'http://api.openweathermap.org/data/2.5/weather?q=';
+const apiKey = '&appid=4c3d4cbc0699bd6b992b7ade198d09e2&units=metric';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -20,10 +20,10 @@ function performAction(event) {
 
     // Get user input values
 
-    const newZip = document.querySelector('#zip').value;
+    const newCity = document.querySelector('#city').value;
     const content = document.querySelector('#feelings').value;
     
-    getData(baseURL, newZip, apiKey)
+    getData(baseURL, newCity, apiKey)
         .then(function(userData){
             //add data to POST request
             postData('/addData', {date: newDate, temp: userData.main.temp, content })
@@ -37,8 +37,8 @@ function performAction(event) {
 
 
 /* Function to GET Web API Data*/
-const getData = async (baseURL, newZip, apiKey) => {
-    const res = await fetch(`${baseURL}${newZip},${apiKey}`);
+const getData = async (baseURL, newCity, apiKey) => {
+    const res = await fetch(`${baseURL}${newCity},${apiKey}`);
     try{
         const userData = await res.json();
         return userData;
@@ -79,7 +79,7 @@ const postData = async (url = '', data = {}) => {
 
       // update new entry values
       document.querySelector('#date').innerHTML = allData.date;
-      document.querySelector('#temp').innerHTML = `${allData.temp} degrees`;
+      document.querySelector('#temp').innerHTML = `${allData.temp} degrees celsius`;
       document.querySelector('#content').innerHTML = allData.content;
     }
     catch (error) {
