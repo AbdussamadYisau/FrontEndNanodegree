@@ -1,6 +1,8 @@
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+var path = require('path');
+const express = require('express');
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mockAPIResponse = require('./mockAPI.js');
 const aylien = require('aylien_textapi');
 
 const aylienapi = new aylien({
@@ -12,6 +14,9 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('dist'))
 
