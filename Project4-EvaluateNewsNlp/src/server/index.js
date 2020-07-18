@@ -27,6 +27,18 @@ app.get('/', function (req, res) {
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+app.post('/sentiment', (req,res) => {
+    textapi.sentiment({url: req.body.url}, function(err,result){
+        if(err) {
+            console.log('Error encountered uring Aylien request.')
+            res.send();
+            return 0;
+        }
+
+        console.log('The request works fine!');
+        res.send(result);
+    })
+})
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
