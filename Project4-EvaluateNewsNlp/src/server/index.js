@@ -1,17 +1,6 @@
-var path = require('path');
-const express = require('express');
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const mockAPIResponse = require('./mockAPI.js');
-const aylien = require('aylien_textapi');
-
-const aylienapi = new aylien({
-    application_id: process.env.API_ID,
-    application_key: process.env.API_KEY 
-})
-
-const dotenv = require('dotenv')
-dotenv.config()
+var path = require('path')
+const express = require('express')
+const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 app.use(cors());
