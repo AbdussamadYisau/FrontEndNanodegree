@@ -1,7 +1,10 @@
 var path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const mockAPIResponse = require('./mockAPI.js');
 const aylienTextApi = require('aylien_textapi');
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -21,12 +24,23 @@ console.log(__dirname)
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('index.html'))
+})
+
+app.post("/textEndpoint", (req,res) => {
+    const {text} = req.body;
+
+    console.log("Data gotten", text);
+
+    textapi.sentiment({text}, (error, result, remaining) => {
+        console.log("Aylien Callback", result, remaining);
+        res.send(result);
+    })
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!')
 })
 
 app.get('/test', function (req, res) {

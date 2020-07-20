@@ -2,14 +2,31 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+    const text = document.querySelector("#textStatement").value;
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
+    if(!text) {
+        return;
+    }
+    
+    console.log(text);
+
+
+    fetch('/textEndpoint', {
+        method: "POST",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({text})
+    })
     .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+    .then(function(data) {
+        document.querySelector('3textPolarity').innerHTML =  data.polarity;
+        document.querySelector('#textSubjectivity').innerHTML =  data.subjectivity;
+        document.querySelector('#textPolarityConfidence').innerHTML =  data.polarity_confidence;
+        document.querySelector('#textSubjectivityConfidence').innerHTML =  data.subjectivity_confidence;
+                
     })
 }
 

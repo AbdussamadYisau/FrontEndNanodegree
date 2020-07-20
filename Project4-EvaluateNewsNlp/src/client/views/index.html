@@ -2,41 +2,65 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
+        <title>Evaluate News Article Using NLP</title>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+            <h1>News Article NLP</h1>>
         </header>
 
         <main>
+            <h2>First off, what is NLP? </h2>
+
+            <p>
+                Natural language processing (NLP) is a branch of artificial intelligence
+                that helps computers understand, interpret and manipulate human
+                language. NLP draws from many disciplines, including computer science
+                and computational linguistics, in its pursuit to fill the gap between
+                human communication and computer understanding.
+            </p>
+
+            <p>
+                In this web app, we would not be building an NLP model from scratch, rather we would be using the Aylien TextAPi.
+            </p>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    
+                    <label>
+                        Type in a statement, lets see what the API thinks of it:
+                    </label>
+                    <input id="textStatement" type="text" name="input" placeholder="Write a statement here...." required>
+                    <input id="submit" type="submit" value="Submit"/>
                 </form>
             <section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Text Results:</strong>
+                <ul id="results">
+                    <li>
+                        <h3>Text Polarity: </h3>
+                        <p id="textPolarity"></p>
+
+                        <h3>Confidence:</h3>
+                        <p id="textPolarityConfidence"></p>
+                    </li>
+
+                    <li>
+                        <h3>Text Subjectivity: </h3>
+                        <p id="textSubjectivity"></p>
+
+                        <h3> Confidence: </h3>
+                        <p id="textSubjectivityConfidence"></p>
+                    </li>
+
+                </ul>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Made with 😍 by &copy; <a href="www.github.com/AbdussamadYisau" target="_blank" rel="noopener"> Abdussamad Yisau</a></p>
         </footer>
 
     </body>
