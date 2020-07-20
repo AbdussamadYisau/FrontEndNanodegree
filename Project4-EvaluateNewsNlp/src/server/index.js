@@ -33,14 +33,17 @@ app.post("/textEndpoint", (req,res) => {
     console.log("Data gotten", text);
 
     textapi.sentiment({text}, (error, result, remaining) => {
-        console.log("Aylien Callback", result, remaining);
-        res.send(result);
+        if (error === null) {
+            console.log("Aylien Callback", result, remaining);
+            res.send(result);
+        }
     })
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+const port = 3030;
+app.listen(port, function () {
+    console.log(`Example app listening on port ${port}!`)
 })
 
 app.get('/test', function (req, res) {
