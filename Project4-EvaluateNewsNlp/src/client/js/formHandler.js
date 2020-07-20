@@ -10,7 +10,7 @@ function handleSubmit(event) {
     
     console.log(text);
 
-
+    // Change URL below, check the Udacity Sass Video
     fetch('/textEndpoint', {
         method: "POST",
         mode: "cors",
