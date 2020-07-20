@@ -70,6 +70,8 @@
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
+            } else {
+                console.log("Service Working not supported");
             }
         </script>
     </body>
