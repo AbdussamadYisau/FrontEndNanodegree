@@ -5,9 +5,13 @@ import "./styles/header.scss";
 import "./styles/resets.scss";
 
 import { handleSubmit } from "./js/formHandler";
+import {handleSubmitArticle} from "./js/urlHandler";
+import { validURL } from "./js/validURL.js";
 
 export {
-    handleSubmit
+    handleSubmit,
+    validURL,
+    handleSubmitArticle
 }
 
 
